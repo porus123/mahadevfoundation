@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahadev</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="cursor"></div>
+    <div id="particles-js">
+        <!--Nav Bar-->
+        <nav>
+            <div class="logo">
+                Mahadev
+            </div>
+            <div class="right-nav">
+                <li><a href="#" class="nav-link">Upcoming Events</a></li>
+                <li class="nav-link" style="displaY:none;"><a href="#">Upcoming Events</a></li>
+            </div>
+        </nav>
+
+        <!--Header-->
+        <div class="header">
+            <div class="heading-middle">
+                Mahadev Foundation
+            </div>
+            <div class="img">
+                <img src="2.png" alt="...">
+            </div>
+        </div>
+    </div>
+    <!-- particle js-->
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+
+    <script>
+        let mouseCursor = document.querySelector(".cursor");
+
+let navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('mousemove',cursor);
+
+function cursor(e){
+    mouseCursor.style.top = e.pageY + 'px';
+    mouseCursor.style.left = e.pageX + 'px';
+}
+
+navLinks.forEach(link => {
+    link.addEventListener('mouseover', () => {
+        mouseCursor.classList.add("enlarge");
+        link.classList.add('hover-link');
+    });
+    link.addEventListener('mouseleave', () => {
+        mouseCursor.classList.remove("enlarge");
+        link.classList.remove('hover-link');
+    });
+});
+    </script>
+</body>
+</html>
